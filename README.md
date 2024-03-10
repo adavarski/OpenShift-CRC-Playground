@@ -146,8 +146,10 @@ Install Red Hat OpenShift Pipelines via OC Console && downlad tkt CLI
 #### Create new project
 
 $ oc new-project arcade
-Note: To switch to a different project, you can use the following command:
 ```
+
+Note: To switch to a different project, you can use the following command:
+
 $ oc project default
 To switch back to the arcade project, run the following command accordingly:
 $ oc project arcade
@@ -159,11 +161,13 @@ $ oc project arcade
 Note: For the dynamic generation of a hostname for the route, the following RBAC
 resources need to be created in the cluster, as the default pipeline user doesn’t have
 permission to read the ingress resource:
+
 $ oc apply -f rbac.yaml
 ```
 
-
 ```
+### Run Pipeline
+
 $ tkn pipeline start build-pipeline --showlog
 
 $ tkn pipeline start build-pipeline --showlog
