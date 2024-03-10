@@ -156,11 +156,12 @@ $ oc project arcade
 #### Run Pipeline
 
 ```
-$ oc apply -f rbac.yaml
-```
 Note: For the dynamic generation of a hostname for the route, the following RBAC
 resources need to be created in the cluster, as the default pipeline user doesn’t have
 permission to read the ingress resource:
+$ oc apply -f rbac.yaml
+```
+
 
 ```
 $ tkn pipeline start build-pipeline --showlog
