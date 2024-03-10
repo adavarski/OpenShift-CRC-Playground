@@ -348,7 +348,7 @@ $ oc exec curl -- curl -s el-build-pipeline-listener:8080 -X POST --data '{}'
 "eventID":"a1bb9392-5f58-47fb-bdfa-c68736fd690c"}
 ```
 
-Night builds:
+Night builds (via cronjob):
 ```
 $ oc apply -f cronjob.yaml
 cronjob.batch/highscore-nightly-build created
