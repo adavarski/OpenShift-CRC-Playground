@@ -189,7 +189,7 @@ $ tkn task start build-deploy --showlog
 ```
 Note: The second task (build-deploy) mostly represents what you did manually:
 $ oc new-project arcade
-$ oc new-build https://github.com/OperatingOpenShift/s3e --context-dir=highscore \
+$ oc new-build https://github.com/adavarski/OpenShift-CRC-Playground --context-dir=highscore \
 --name=highscore
 $ oc start-build highscore
 $ oc create deployment highscore \
