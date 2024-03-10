@@ -186,7 +186,8 @@ To achieve this, you can use the declarative way of defining the resources the p
 ```
 ### Run Pipeline
 
-$ tkn pipeline start build-pipeline --showlog
+$ oc apply -f pipeline.yaml
+pipeline.tekton.dev/build-pipeline created
 
 $ tkn pipeline start build-pipeline --showlog
 PipelineRun started: build-pipeline-run-fstdf
