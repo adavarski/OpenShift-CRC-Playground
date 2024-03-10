@@ -93,7 +93,7 @@ EOF
 sudo systemctl restart haproxy
 sudo systemctl enable haproxy
 ```
-#### 2.Setup CRC access (oc CLI) on the Laptop
+#### 2.Setup CRC access (oc CLI && OC Console) on the Laptop
 
 ```
 Add line /etc/hosts
