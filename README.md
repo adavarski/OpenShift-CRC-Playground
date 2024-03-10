@@ -1,6 +1,6 @@
 ## OpenShift Playground (Tekton CI/CD)
 
-Note:  Setting up CodeReady Containers (CRC) on a Remote Server (Ubuntu 22.04) and Remote Access to CRC (remote OpenShift4 development environment) from Laptop. Tekton CI/CD.
+Note:  Setting up CodeReady Containers (CRC) on a Remote Server (Ubuntu 22.04) and Remote Access to CRC from Laptop (remote OpenShift4 development environment). Tekton CI/CD.
 
 Pre: RHN account (free) 
 
