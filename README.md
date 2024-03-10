@@ -282,6 +282,7 @@ Add arcade to /etc/hosts
 ```
 
 Test : 
-
+```
 $ curl arcade.apps-crc.testing/highscore
 <html><body><h1>Highscores</h1></html>
+```
