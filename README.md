@@ -1,3 +1,5 @@
+## OpenShift Playground (Tekton)
+
 ### Setting up CodeReady Containers (CRC) on a Remote Server (Ubuntu 22.04) and Remote Access to CRC (remote OpenShift4 development environment) from Laptop
 
 Pre: RHN account (free) 
@@ -142,6 +144,8 @@ $ oc get po
 
 
 Install Red Hat OpenShift Pipelines via OC Console && downlad tkt CLI 
+
+Note: Red Hat OpenShift Pipelines is based on the Tekton CI/CD project.
 
 #### Create new project
 
