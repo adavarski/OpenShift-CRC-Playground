@@ -333,12 +333,15 @@ build-pipeline   18 minutes ago   build-pipeline-run-z6ldd   18 minutes ago   2m
 
 ```
 
-Add arcade to /etc/hosts
+Add arcade to /etc/hosts and test:
 ```
 192.168.1.99 devops console-openshift-console.apps-crc.testing oauth-openshift.apps-crc.testing arcade.apps-crc.testing
+
+$ curl arcade.apps-crc.testing/highscore
+<html><body><h1>Highscores</h1></html>
 ```
 
-Test EvenListener : 
+Test Tekton EvenListener : 
 ```
 $ oc apply -f eventlistener.yaml
 eventlistener.triggers.tekton.dev/build-pipeline-listener created
