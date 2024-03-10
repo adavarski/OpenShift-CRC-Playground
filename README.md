@@ -161,7 +161,7 @@ $ oc project arcade
 Note: For the dynamic generation of a hostname for the route, the following RBAC
 resources need to be created in the cluster, as the default pipeline user doesn’t have
 permission to read the ingress resource:
-
+$ cd highscore/ci
 $ oc apply -f rbac.yaml
 ```
 Note: The second task mostly represents what you did manually
