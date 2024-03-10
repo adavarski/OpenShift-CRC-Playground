@@ -175,7 +175,7 @@ $ oc create deployment highscore \
 $ oc expose deployment highscore
 $ oc expose service highscore \
 --hostname=arcade.apps-crc.testing --path=/highscore
-``
+```
 However, since the idea of a pipeline is that it will run more than once, you need to
 make sure that the pipeline is idempotent.
 ```
