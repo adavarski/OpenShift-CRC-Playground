@@ -183,10 +183,7 @@ permission to read the ingress resource:
 
 $ oc apply -f task-deploy.yaml
 $ tkn task start build-deploy --showlog
-```
-### Composing the pipeline and Run Pipeline
 
-```
 Note: The second task (build-deploy) mostly represents what you did manually:
 $ oc new-project arcade
 $ oc new-build https://github.com/adavarski/OpenShift-CRC-Playground --context-dir=highscore \
@@ -198,6 +195,8 @@ $ oc expose deployment highscore
 $ oc expose service highscore \
 --hostname=arcade.apps-crc.testing --path=/highscore
 ```
+### Composing the pipeline and Run Pipeline
+
 However, since the idea of a pipeline is that it will run more than once, you need to
 make sure that the pipeline is idempotent. That means, independent of how often the
 pipeline is started, the OpenShift cluster will, in the end, get the latest version of the
