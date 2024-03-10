@@ -168,6 +168,14 @@ $ oc project arcade
 — Step 1: Configure project
 — Step 2: Build application
 — Step 3: Deploy and expose the application
+
+$ oc apply -f task-unit.yaml
+$ tkn task start verify-unit-tests --showlog
+
+$ oc apply -f rbac.yaml
+
+$ oc apply -f task-deploy.yaml
+$ tkn task start build-deploy --showlog
 ```
 
 ```
