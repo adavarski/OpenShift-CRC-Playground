@@ -164,7 +164,7 @@ permission to read the ingress resource:
 
 $ oc apply -f rbac.yaml
 ```
-The second task mostly represents what you did manually
+Note: The second task mostly represents what you did manually
 ```
 $ oc new-project arcade
 $ oc new-build https://github.com/OperatingOpenShift/s3e --context-dir=highscore \
