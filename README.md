@@ -161,6 +161,7 @@ $ oc project arcade
 
 #### Run Pipeline
 
+```
 • Task 1
 — Step 1: Clone Git repository
 — Step 2: Run unit tests
@@ -168,7 +169,7 @@ $ oc project arcade
 — Step 1: Configure project
 — Step 2: Build application
 — Step 3: Deploy and expose the application
-
+```
 
 ```
 Note: For the dynamic generation of a hostname for the route, the following RBAC
