@@ -177,7 +177,12 @@ $ oc expose service highscore \
 --hostname=arcade.apps-crc.testing --path=/highscore
 ```
 However, since the idea of a pipeline is that it will run more than once, you need to
-make sure that the pipeline is idempotent.
+make sure that the pipeline is idempotent. That means, independent of how often the
+pipeline is started, the OpenShift cluster will, in the end, get the latest version of the
+application deployed. When the pipeline runs the first time, it’ll create the project and
+deploy the resources. If it runs the second time, those resources already exist. If it
+runs again and everything is up-to-date already, the pipeline doesn’t change anything.
+To achieve this, you can use the declarative way of defining the resources the pipeline
 ```
 ### Run Pipeline
 
