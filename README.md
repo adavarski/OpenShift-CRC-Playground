@@ -344,3 +344,4 @@ Night builds:
 $ oc apply -f cronjob.yaml
 cronjob.batch/highscore-nightly-build created
 ```
+TBD: Pipeline triggered by GitHub push event (webhook).
