@@ -169,10 +169,9 @@ $ oc project arcade
 — Step 2: Build application
 — Step 3: Deploy and expose the application
 
-```
 
 $ cd highscore/ci
-```
+
 $ oc apply -f task-unit.yaml
 $ tkn task start verify-unit-tests --showlog
 
