@@ -295,23 +295,12 @@ Add arcade to /etc/hosts
 
 Test : 
 ```
+$ oc apply -f eventlistener.yaml
+eventlistener.triggers.tekton.dev/build-pipeline-listener created
+
 List services to see the service that is created by Tekton:
 $ oc get services
-NAME
-el-build-pipeline-listener
-highscore
-TYPE
-ClusterIP
-ClusterIP
-CLUSTER-IP
-10.217.4.192
-10.217.5.217
-EXTERNAL-IP
-<none>
-<none>
-PORT(S)
-8080/TCP
-8080/TCP
+
 To test the EventListener, create a curl pod and send an empty JSON via POST to the
 service:
 $ oc run curl --image=curlimages/curl --command sleep 30h
