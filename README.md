@@ -153,7 +153,6 @@ Note: Red Hat OpenShift Pipelines is based on the Tekton CI/CD project.
 $ oc new-project arcade
 
 Note: To switch to a different project, you can use the following command:
-
 $ oc project default
 To switch back to the arcade project, run the following command accordingly:
 $ oc project arcade
