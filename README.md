@@ -138,7 +138,7 @@ $ oc get po
 
 ```
 
-### 3.Tekton CI/CD 
+### 3.Tekton CI/CD Pipelines
 
 
 Install Red Hat OpenShift Pipelines via OC Console && downlad tkt CLI 
@@ -164,7 +164,20 @@ permission to read the ingress resource:
 
 $ oc apply -f rbac.yaml
 ```
-
+The second task mostly represents what you did manually
+```
+$ oc new-project arcade
+$ oc new-build https://github.com/OperatingOpenShift/s3e --context-dir=highscore \
+--name=highscore
+$ oc start-build highscore
+$ oc create deployment highscore \
+--image=image-registry.openshift-image-registry.svc:5000/arcade/highscore
+$ oc expose deployment highscore
+$ oc expose service highscore \
+--hostname=arcade.apps-crc.testing --path=/highscore
+``
+However, since the idea of a pipeline is that it will run more than once, you need to
+make sure that the pipeline is idempotent.
 ```
 ### Run Pipeline
 
