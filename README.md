@@ -158,7 +158,7 @@ To switch back to the arcade project, run the following command accordingly:
 $ oc project arcade
 ```
 
-#### Run Pipeline
+#### Run Tasks
 
 ```
 • Task 1
@@ -169,22 +169,23 @@ $ oc project arcade
 — Step 2: Build application
 — Step 3: Deploy and expose the application
 
+```
+
+$ cd highscore/ci
+```
 $ oc apply -f task-unit.yaml
 $ tkn task start verify-unit-tests --showlog
 
+
 $ oc apply -f rbac.yaml
+Note: For the dynamic generation of a hostname for the route, the following RBAC
+resources need to be created in the cluster, as the default pipeline user doesn’t have
+permission to read the ingress resource:
 
 $ oc apply -f task-deploy.yaml
 $ tkn task start build-deploy --showlog
 ```
-
-```
-Note: For the dynamic generation of a hostname for the route, the following RBAC
-resources need to be created in the cluster, as the default pipeline user doesn’t have
-permission to read the ingress resource:
-$ cd highscore/ci
-$ oc apply -f rbac.yaml
-```
+### Composing the pipeline and Run Pipeline
 
 ```
 Note: The second task (build-deploy) mostly represents what you did manually:
