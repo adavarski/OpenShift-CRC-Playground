@@ -295,6 +295,29 @@ Add arcade to /etc/hosts
 
 Test : 
 ```
-$ curl arcade.apps-crc.testing/highscore
-<html><body><h1>Highscores</h1></html>
+List services to see the service that is created by Tekton:
+$ oc get services
+NAME
+el-build-pipeline-listener
+highscore
+TYPE
+ClusterIP
+ClusterIP
+CLUSTER-IP
+10.217.4.192
+10.217.5.217
+EXTERNAL-IP
+<none>
+<none>
+PORT(S)
+8080/TCP
+8080/TCP
+To test the EventListener, create a curl pod and send an empty JSON via POST to the
+service:
+$ oc run curl --image=curlimages/curl --command sleep 30h
+pod/curl created
+$ oc exec curl -- curl -s el-build-pipeline-listener:8080 -X POST --data '{}'
+{"eventListener":"build-pipeline-listener","namespace":"arcade",
+"eventListenerUID":"aecac3b4-a865-44df-92f0-4ac470a4bae4",
+"eventID":"a1bb9392-5f58-47fb-bdfa-c68736fd690c"}
 ```
