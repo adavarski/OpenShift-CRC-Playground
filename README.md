@@ -149,8 +149,8 @@ Note: Red Hat OpenShift Pipelines is based on the Tekton CI/CD project.
 
 #### Create new project
 
-$ oc new-project arcade
 ```
+$ oc new-project arcade
 
 Note: To switch to a different project, you can use the following command:
 
