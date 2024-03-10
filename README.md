@@ -326,7 +326,7 @@ Waiting for logs to be available...
 [build-deploy : deploy] ++ cat
 [build-deploy : deploy] route.route.openshift.io/highscore unchanged
 
-tkn pipelines list
+$ tkn pipelines list
 NAME             AGE              LAST RUN                   STARTED          DURATION   STATUS
 build-pipeline   18 minutes ago   build-pipeline-run-z6ldd   18 minutes ago   2m17s      Succeeded
 
