@@ -295,7 +295,7 @@ Add arcade to /etc/hosts
 192.168.1.99 devops console-openshift-console.apps-crc.testing oauth-openshift.apps-crc.testing arcade.apps-crc.testing
 ```
 
-Test : 
+Test EvenListener : 
 ```
 $ oc apply -f eventlistener.yaml
 eventlistener.triggers.tekton.dev/build-pipeline-listener created
@@ -311,4 +311,10 @@ $ oc exec curl -- curl -s el-build-pipeline-listener:8080 -X POST --data '{}'
 {"eventListener":"build-pipeline-listener","namespace":"arcade",
 "eventListenerUID":"aecac3b4-a865-44df-92f0-4ac470a4bae4",
 "eventID":"a1bb9392-5f58-47fb-bdfa-c68736fd690c"}
+```
+
+Night builds:
+```
+$ oc apply -f cronjob.yaml
+cronjob.batch/highscore-nightly-build created
 ```
