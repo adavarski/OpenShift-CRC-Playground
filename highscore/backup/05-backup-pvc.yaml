@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: score-backup
+  namespace: arcade
+  annotations:
+    snapshot.alpha.kubernetes.io/snapshot: score-backup
+spec:
+  dataSource:
+    name: score-backup
+    kind: VolumeSnapshot
+    apiGroup: snapshot.storage.k8s.io
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 1Gi

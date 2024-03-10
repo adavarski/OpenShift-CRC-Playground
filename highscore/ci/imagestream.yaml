@@ -1,0 +1,35 @@
+---
+apiVersion: image.openshift.io/v1
+kind: ImageStream
+metadata:
+  labels:
+    build: highscore
+  name: highscore
+  namespace: arcade
+spec:
+  lookupPolicy:
+    local: false
+---
+apiVersion: image.openshift.io/v1
+kind: ImageStream
+metadata:
+  annotations:
+    openshift.io/generated-by: OpenShiftNewBuild
+    openshift.io/image.dockerRepositoryCheck: "2021-10-11T12:00:30Z"
+  labels:
+    build: s3e
+  name: alpine
+  namespace: arcade
+spec:
+  lookupPolicy:
+    local: false
+  tags:
+  - annotations:
+      openshift.io/imported-from: alpine:latest
+    from:
+      kind: DockerImage
+      name: alpine:latest
+    generation: 2
+    name: latest
+    referencePolicy:
+      type: Source
