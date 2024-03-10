@@ -178,8 +178,9 @@ permission to read the ingress resource:
 $ cd highscore/ci
 $ oc apply -f rbac.yaml
 ```
-Note: The second task (build-deploy) mostly represents what you did manually:
+
 ```
+Note: The second task (build-deploy) mostly represents what you did manually:
 $ oc new-project arcade
 $ oc new-build https://github.com/OperatingOpenShift/s3e --context-dir=highscore \
 --name=highscore
