@@ -4,7 +4,7 @@ Note:  Setting up CodeReady Containers (CRC) on a Remote Server (Ubuntu 22.04) a
 
 Pre: RHN account (free) 
 
-#### 1. Setup OpenShift CRC on remote host (Ubuntu 22.04 LTS, Server IP: 192.168.1.99)
+#### 1. Setup OpenShift CRC on remote host (Ubuntu 22.04 LTS, Server IP: 192.168.1.99 devops)
 ```
 
 ### Setup sudo
@@ -93,7 +93,7 @@ EOF
 sudo systemctl restart haproxy
 sudo systemctl enable haproxy
 ```
-#### 2.Setup On the Laptop
+#### 2.Setup CRC access (oc CLI) on the Laptop
 
 ```
 Add line /etc/hosts
