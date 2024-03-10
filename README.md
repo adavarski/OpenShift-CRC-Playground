@@ -306,6 +306,9 @@ eventlistener.triggers.tekton.dev/build-pipeline-listener created
 
 List services to see the service that is created by Tekton:
 $ oc get services
+NAME                         TYPE        CLUSTER-IP    EXTERNAL-IP   PORT(S)             AGE
+el-build-pipeline-listener   ClusterIP   10.217.5.6    <none>        8080/TCP,9000/TCP   160m
+highscore                    ClusterIP   10.217.4.50   <none>        8080/TCP            3h23m
 
 To test the EventListener, create a curl pod and send an empty JSON via POST to the
 service:
