@@ -10,7 +10,7 @@ spec:
       script: |
         #!/bin/bash
 
-        git clone https://github.com/adavarski/s3e /workspace/src
+        git clone https://github.com/adavarski/OpenShift-CRC-Playground /workspace/src
     - name: test-unit
       image: golang
       script: |
