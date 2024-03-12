@@ -33,6 +33,7 @@ $ source ~/.bashrc
 $ crc config set memory 14336
 $ crc config set consent-telemetry no
 $ crc config set disk-size 100
+$ crc config set enable-cluster-monitoring true
 $ crc config set pull-secret-file ~/OPENSHIFT/pull-secret.txt
 Successfully configured pull-secret-file to /home/davar/OPENSHIFT/pull-secret.txt
 $ crc config view
