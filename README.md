@@ -39,7 +39,8 @@ Successfully configured pull-secret-file to /home/davar/OPENSHIFT/pull-secret.tx
 $ crc config view
 - consent-telemetry                     : no
 - disk-size                             : 100
-- memory                                : 12288
+- enable-cluster-monitoring             : true
+- memory                                : 14336
 - pull-secret-file                      : /home/davar/OPENSHIFT-CRC/pull-secrets.txt
 
 ### Deploy CodeReady Containers virtual machine
