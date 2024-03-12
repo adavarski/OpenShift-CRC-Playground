@@ -1,4 +1,4 @@
-## OpenShift Playground (Tekton CI/CD)
+## OpenShift Playground (Tekton CI/CD, Monitoring, etc.)
 
 Note:  Setting up CodeReady Containers (CRC) on a Remote Server (Ubuntu 22.04) and Remote Access to CRC from Laptop (remote OpenShift4 development environment). Tekton CI/CD.
 
@@ -448,7 +448,7 @@ TBD: Pipeline triggered by GitHub push event (webhook), Note: Needs OC public IP
 
 ### Deploying Grafana on Openshift 4
 
-OpenShift users want access to a Grafana interface in order to build custom dashboards for their cluster and application workloads. The Grafana that shipped with OpenShift was read-only and has been deprecated in OpenShift 4.11 and removed in OpenShift 4.12 . [REF](https://issues.redhat.com/browse/MON-1591?focusedCommentId=19239654&page=com.atlassian.jira.plugin.system.issuetabpanels%3Acomment-tabpanel#comment-19239654)
+OpenShift users want access to a Grafana interface in order to build custom dashboards for their cluster and application workloads. The Grafana that shipped with OpenShift was read-only and has been deprecated in OpenShift 4.11 and removed in OpenShift 4.12 [REF](https://issues.redhat.com/browse/MON-1591?focusedCommentId=19239654&page=com.atlassian.jira.plugin.system.issuetabpanels%3Acomment-tabpanel#comment-19239654).
 
 Since OpenShift uses Prometheus for both Cluster and User Workload metrics, its fairly straight forward to deploy a Grafana instance using the Grafana Operator and then view those cluster metrics and create custom Dashboards.
 
