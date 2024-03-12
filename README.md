@@ -30,7 +30,7 @@ eval $(crc oc-env)
 $ source ~/.bashrc 
 
 ### Setup CRC:
-$ crc config set memory 12288
+$ crc config set memory 14336
 $ crc config set consent-telemetry no
 $ crc config set disk-size 100
 $ crc config set pull-secret-file ~/OPENSHIFT/pull-secret.txt
