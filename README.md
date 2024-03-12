@@ -46,6 +46,74 @@ $ crc config view
 ### Deploy CodeReady Containers virtual machine
 $ crc setup
 $ crc start
+$ crc start
+INFO Using bundle path /home/davar/.crc/cache/crc_libvirt_4.14.12_amd64.crcbundle 
+INFO Checking if running as non-root              
+INFO Checking if running inside WSL2              
+INFO Checking if crc-admin-helper executable is cached 
+INFO Checking if running on a supported CPU architecture 
+INFO Checking if crc executable symlink exists    
+INFO Checking minimum RAM requirements            
+INFO Checking if Virtualization is enabled        
+INFO Checking if KVM is enabled                   
+INFO Checking if libvirt is installed             
+INFO Checking if user is part of libvirt group    
+INFO Checking if active user/process is currently part of the libvirt group 
+INFO Checking if libvirt daemon is running        
+INFO Checking if a supported libvirt version is installed 
+INFO Checking if crc-driver-libvirt is installed  
+INFO Checking crc daemon systemd socket units     
+INFO Checking if AppArmor is configured           
+INFO Checking if systemd-networkd is running      
+INFO Checking if NetworkManager is installed      
+INFO Checking if NetworkManager service is running 
+INFO Checking if dnsmasq configurations file exist for NetworkManager 
+INFO Checking if the systemd-resolved service is running 
+INFO Checking if /etc/NetworkManager/dispatcher.d/99-crc.sh exists 
+INFO Checking if libvirt 'crc' network is available 
+INFO Checking if libvirt 'crc' network is active  
+INFO Loading bundle: crc_libvirt_4.14.12_amd64... 
+INFO Starting CRC VM for openshift 4.14.12...     
+INFO CRC instance is running with IP 192.168.130.11 
+INFO CRC VM is running                            
+INFO Updating authorized keys...                  
+INFO Configuring shared directories               
+INFO Check internal and public DNS query...       
+INFO Check DNS query from host...                 
+WARN Wildcard DNS resolution for apps-crc.testing does not appear to be working 
+INFO Verifying validity of the kubelet certificates... 
+INFO Starting kubelet service                     
+INFO Waiting for kube-apiserver availability... [takes around 2min] 
+INFO Waiting until the user's pull secret is written to the instance disk... 
+INFO Enabling cluster monitoring operator...      
+INFO Starting openshift instance... [waiting for the cluster to stabilize] 
+INFO Operator network is progressing              
+INFO 2 operators are progressing: ingress, network 
+INFO Operator ingress is progressing              
+INFO Operator ingress is progressing              
+INFO 2 operators are progressing: image-registry, ingress 
+INFO Operator ingress is progressing              
+INFO Operator ingress is progressing              
+INFO All operators are available. Ensuring stability... 
+INFO Operators are stable (2/3)...                
+INFO Operators are stable (3/3)...                
+INFO Adding crc-admin and crc-developer contexts to kubeconfig... 
+Started the OpenShift cluster.
+
+The server is accessible via web console at:
+  https://console-openshift-console.apps-crc.testing
+
+Log in as administrator:
+  Username: kubeadmin
+  Password: kTJ5D-VrUDY-NEuuV-kwG5J
+
+Log in as user:
+  Username: developer
+  Password: developer
+
+Use the 'oc' command line interface:
+  $ eval $(crc oc-env)
+  $ oc login -u developer https://api.crc.testing:6443
 
 ### Check CRC version and credentials
 $ crc version
@@ -138,7 +206,7 @@ users:
 
 
 $ oc get po
-
+etc.
 
 ```
 
