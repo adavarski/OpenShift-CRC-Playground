@@ -16,7 +16,7 @@ spec:
   source:
     contextDir: highscore
     git:
-      uri: https://github.com/adavarski/s3e
+      uri: https://github.com/adavarski/OpenShift-CRC-Playground
     type: Git
   strategy:
     dockerStrategy:
