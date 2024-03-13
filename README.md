@@ -470,6 +470,39 @@ openshift-gitops-server   openshift-gitops-server-openshift-gitops.apps-crc.test
 
 Add "192.168.1.99 openshift-gitops-server-openshift-gitops.apps-crc.testing" to /etc/hosts and Browser Access ArgoCD Web UI: https://openshift-gitops-server-openshift-gitops.apps-crc.testing/applications (user: admin; password: 6eJ9jmwT4vcFDZABPgYWNCk73sEutyqd)
 
+Download arcocd CLI and login
+```
+$ sudo curl -sSL -o /usr/local/bin/argocd https://github.com/argoproj/argo-cd/releases/latest/download/argocd-linux-amd64
+$ sudo chmod 755 /usr/local/bin/argocd
+$ argocd login --insecure openshift-gitops-server-openshift-gitops.apps-crc.testing --grpc-web
+Username: admin
+Password: 
+'admin:login' logged in successfully
+Context 'openshift-gitops-server-openshift-gitops.apps-crc.testing' updated
+
+$ argocd version
+argocd: v2.10.2+fcf5d8c
+  BuildDate: 2024-03-01T21:47:51Z
+  GitCommit: fcf5d8c2381b68ab1621b90be63913b12cca2eb7
+  GitTreeState: clean
+  GoVersion: go1.21.7
+  Compiler: gc
+  Platform: linux/amd64
+argocd-server: v2.9.5+f943664
+  BuildDate: 2024-01-30T09:32:04Z
+  GitCommit: f9436641a616d277ab1f98694e5ce4c986d4ea05
+  GitTreeState: clean
+  GoVersion: go1.20.12
+  Compiler: gc
+  Platform: linux/amd64
+  ExtraBuildInfo: {Vendor Information: Red Hat OpenShift GitOps version: v1.11.1}
+  Kustomize Version: v5.2.1 unknown
+  Helm Version: v3.13.2+g2a2fb3b
+  Kubectl Version: v0.24.17
+  Jsonnet Version: v0.20.0
+
+
+```
 
 ### Deploying Grafana on Openshift 4
 
