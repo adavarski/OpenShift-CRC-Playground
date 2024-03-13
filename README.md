@@ -1,4 +1,4 @@
-## OpenShift Playground (Tekton CI/CD, Monitoring, etc.)
+## OpenShift Playground (Tekton CI/CD, GitOps, Monitoring, etc.)
 
 OpenShift builds atop its Kubernetes core to add features and the components that
 support them. Some of its original developers called Kubernetes “a platform for
