@@ -219,7 +219,7 @@ etc.
 ### 3.Tekton CI/CD Pipelines
 
 
-Install Red Hat OpenShift Pipelines via OC Console && downlad tkt CLI 
+Install Red Hat OpenShift Pipelines via OpenShift Web Console && downlad tkt CLI 
 
 Note: Red Hat OpenShift Pipelines is based on the Tekton CI/CD project.
 
