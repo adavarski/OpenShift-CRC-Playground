@@ -54,7 +54,6 @@ $ crc config view
 ### Deploy CodeReady Containers virtual machine
 $ crc setup
 $ crc start
-$ crc start
 INFO Using bundle path /home/davar/.crc/cache/crc_libvirt_4.14.12_amd64.crcbundle 
 INFO Checking if running as non-root              
 INFO Checking if running inside WSL2              
@@ -77,8 +76,7 @@ INFO Checking if NetworkManager is installed
 INFO Checking if NetworkManager service is running 
 INFO Checking if dnsmasq configurations file exist for NetworkManager 
 INFO Checking if the systemd-resolved service is running 
-INFO Checking if /etc/NetworkManager/dispatcher.d/99-crc.sh exists 
-INFO Checking if libvirt 'crc' network is available 
+INFO Checking if /etc/NetworkManager/dispatcher.d/99-crc.sh exists INFO Checking if libvirt 'crc' network is available 
 INFO Checking if libvirt 'crc' network is active  
 INFO Loading bundle: crc_libvirt_4.14.12_amd64... 
 INFO Starting CRC VM for openshift 4.14.12...     
