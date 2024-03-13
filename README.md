@@ -219,7 +219,7 @@ etc.
 ### 3.Tekton CI/CD Pipelines
 
 
-Install Red Hat OpenShift Pipelines via OpenShift Web Console && downlad tkt CLI 
+Install Red Hat OpenShift Pipelines via OpenShift Console && downlad tkt CLI 
 
 Note: Red Hat OpenShift Pipelines is based on the Tekton CI/CD project.
 
@@ -451,10 +451,10 @@ cronjob.batch/highscore-nightly-build created
 ```
 TBD: Pipeline triggered by GitHub push event (webhook), Note: Needs OC public IP.
 
-### OpenShift Gitops 
+### OpenShift GitOps 
 
 OpenShift GitOps is based on Argo CD. To install OpenShift GitOps using the OpenShift Console, visit the OperatorHub
-section in the OpenShift console, search for OpenShift GitOps and click Install
+section in the OpenShift console, search for OpenShift GitOps and click Install.
 ```
 $ oc extract secret/openshift-gitops-cluster -n openshift-gitops --to=-
 # admin.password
