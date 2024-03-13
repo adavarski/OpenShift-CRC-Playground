@@ -12,7 +12,7 @@ Note:  We will use CRC in this playground and setting up CodeReady Containers (C
 
 Pre: RHN account (free) 
 
-#### 1. Setup OpenShift CRC on remote host (Ubuntu 22.04 LTS, Server IP: 192.168.1.99 devops)
+#### Setup OpenShift CRC on remote host (Ubuntu 22.04 LTS, Server IP: 192.168.1.99 devops)
 ```
 
 ### Setup sudo
@@ -169,7 +169,7 @@ EOF
 sudo systemctl restart haproxy
 sudo systemctl enable haproxy
 ```
-#### 2.Setup CRC access (oc CLI && OC Console) on the Laptop
+#### Setup CRC access (oc CLI && OC Console) on the Laptop
 
 ```
 Add line /etc/hosts
@@ -216,7 +216,7 @@ etc.
 
 ```
 
-### 3.Tekton CI/CD Pipelines
+### Tekton CI/CD Pipelines
 
 
 Install Red Hat OpenShift Pipelines via OpenShift Console && downlad tkt CLI 
