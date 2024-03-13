@@ -451,6 +451,24 @@ cronjob.batch/highscore-nightly-build created
 ```
 TBD: Pipeline triggered by GitHub push event (webhook), Note: Needs OC public IP.
 
+### OpenShift Gitops 
+
+OpenShift GitOps is based on Argo CD. To install OpenShift GitOps using the OpenShift Console, visit the OperatorHub
+section in the OpenShift console, search for OpenShift GitOps and click Install
+```
+$ oc extract secret/openshift-gitops-cluster -n openshift-gitops --to=-
+# admin.password
+6eJ9jmwT4vcFDZABPgYWNCk73sEutyqd
+```
+$ oc project openshift-gitops
+Now using project "openshift-gitops" on server "https://console-openshift-console.apps-crc.testing:6443".
+$ oc get route
+NAME                      HOST/PORT                                                   PATH   SERVICES                  PORT    TERMINATION            WILDCARD
+kam                       kam-openshift-gitops.apps-crc.testing                              kam                       8443    passthrough/None       None
+openshift-gitops-server   openshift-gitops-server-openshift-gitops.apps-crc.testing          openshift-gitops-server   https   passthrough/Redirect   None
+
+Add "192.168.1.99 openshift-gitops-server-openshift-gitops.apps-crc.testing" to /etc/hosts and Browser Access ArgoCD Web UI: https://openshift-gitops-server-openshift-gitops.apps-crc.testing/applications (user: admin; password: 6eJ9jmwT4vcFDZABPgYWNCk73sEutyqd)
+
 
 ### Deploying Grafana on Openshift 4
 
