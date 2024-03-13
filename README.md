@@ -1,5 +1,14 @@
 ## OpenShift Playground (Tekton CI/CD, Monitoring, etc.)
 
+OpenShift builds atop its Kubernetes core to add features and the components that
+support them. Some of its original developers called Kubernetes “a platform for
+building platforms.” OpenShift took them up on it. It provides the automation and
+resilience of modern infrastructure while letting you stay focused on your application
+code. Kubernetes in OpenShift is like the Linux kernel in a Linux distribution.
+
+![picture](pictures/OpenShift-oround-a-K8s-core.png)
+
+
 Note:  Setting up CodeReady Containers (CRC) on a Remote Server (Ubuntu 22.04) and Remote Access to CRC from Laptop (remote OpenShift4 development environment). Tekton CI/CD.
 
 Pre: RHN account (free) 
