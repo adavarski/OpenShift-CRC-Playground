@@ -181,7 +181,7 @@ You have access to 67 projects, the list has been suppressed. You can list all p
 
 Using project "default"
 
-Or: $ oc login -u kubeadmin -p VjVIZ-rDfq3-S5Ip2-4jiLU https://devops:6443
+Or: $ oc login -u kubeadmin -p kTJ5D-VrUDY-NEuuV-kwG5J https://devops:6443
 
 $ cat ~/.kube/config ($ oc config view)
 apiVersion: v1
