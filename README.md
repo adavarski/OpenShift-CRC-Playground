@@ -6,10 +6,9 @@ building platforms.” OpenShift took them up on it. It provides the automation 
 resilience of modern infrastructure while letting you stay focused on your application
 code. Kubernetes in OpenShift is like the Linux kernel in a Linux distribution.
 
-![picture](pictures/OpenShift-oround-a-K8s-core.png)
+<img src="pictures/OpenShift-oround-a-K8s-core.png?raw=true" width="800">
 
-
-Note:  Setting up CodeReady Containers (CRC) on a Remote Server (Ubuntu 22.04) and Remote Access to CRC from Laptop (remote OpenShift4 development environment). Tekton CI/CD.
+Note:  We will use CRC in this playground and setting up CodeReady Containers (CRC) on a Remote Server (Ubuntu 22.04) and Remote Access to CRC from Laptop (remote OpenShift4 development environment). 
 
 Pre: RHN account (free) 
 
