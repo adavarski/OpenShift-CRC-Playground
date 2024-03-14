@@ -548,7 +548,8 @@ oc new-project grafana-operator
 ```
 
 Deploy the Grafana Operator
-```cat << EOF | oc create -f -
+```
+cat << EOF | oc create -f -
 apiVersion: operators.coreos.com/v1
 kind: OperatorGroup
 metadata:
