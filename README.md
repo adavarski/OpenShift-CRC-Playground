@@ -111,7 +111,7 @@ The server is accessible via web console at:
 
 Log in as administrator:
   Username: kubeadmin
-  Password: kTJ5D-VrUDY-NEuuV-kwG5J
+  Password: UzUvE-IB4Mf-viZ8Z-PF3IY
 
 Log in as user:
   Username: developer
@@ -132,7 +132,7 @@ To login as a regular user, run 'oc login -u developer -p developer https://api.
 To login as an admin, run 'oc login -u kubeadmin -p kTJ5D-VrUDY-NEuuV-kwG5J https://api.crc.testing:6443'
 
 ### Check if CodeReady Containers is working
-$ oc login -u kubeadmin -p kTJ5D-VrUDY-NEuuV-kwG5J https://api.crc.testing:6443
+$ oc login -u kubeadmin -p UzUvE-IB4Mf-viZ8Z-PF3IY https://api.crc.testing:6443
 $ oc get nodes
 
 ### Setup HAProxy for remote CRC access 
@@ -180,14 +180,12 @@ Browser: https://console-openshift-console.apps-crc.testing/dashboards
 
 Install oc CLI on laptop && oc login
 
-$ oc login -u kubeadmin -p kTJ5D-VrUDY-NEuuV-kwG5J https://console-openshift-console.apps-crc.testing:6443
+$ oc login -u kubeadmin -p UzUvE-IB4Mf-viZ8Z-PF3IY https://console-openshift-console.apps-crc.testing:6443
 Login successful.
 
 You have access to 67 projects, the list has been suppressed. You can list all projects with 'oc projects'
 
 Using project "default"
-
-Or: $ oc login -u kubeadmin -p kTJ5D-VrUDY-NEuuV-kwG5J https://devops:6443
 
 $ cat ~/.kube/config ($ oc config view)
 apiVersion: v1
@@ -474,6 +472,8 @@ openshift-gitops-dex-server-6cb895889d-jpbqs                  0/1     Pending   
 openshift-gitops-redis-5684c6fc5b-md868                       1/1     Running   0          5m58s
 openshift-gitops-repo-server-dcf86f4c7-d6jfj                  1/1     Running   0          5m58s
 openshift-gitops-server-55dbf6b78b-wnpv6                      1/1     Running   0          5m58s
+
+$ oc get events -n openshift-gitops
 
 $ argoPass=$(oc get secret/openshift-gitops-cluster -n openshift-gitops -o jsonpath='{.data.admin\.password}' | base64 -d)
 echo $argoPass
