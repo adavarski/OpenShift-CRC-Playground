@@ -503,7 +503,10 @@ argocd-server: v2.9.5+f943664
 
 
 ```
-Ref: [Video Tutorial](https://www.youtube.com/watch?v=xYCX2EejSMc)
+Ref: 
+- [Video Tutorial](https://www.youtube.com/watch?v=xYCX2EejSMc)
+- https://redhat-scholars.github.io/argocd-tutorial/argocd-tutorial/01-setup.html
+
 ### Grafana on Openshift
 
 OpenShift users want access to a Grafana interface in order to build custom dashboards for their cluster and application workloads. The Grafana that shipped with OpenShift was read-only and has been deprecated in OpenShift 4.11 and removed in OpenShift 4.12 [REF](https://issues.redhat.com/browse/MON-1591?focusedCommentId=19239654&page=com.atlassian.jira.plugin.system.issuetabpanels%3Acomment-tabpanel#comment-19239654).
