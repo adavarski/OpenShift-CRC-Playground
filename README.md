@@ -39,6 +39,7 @@ $ source ~/.bashrc
 
 ### Setup CRC:
 $ crc config set memory 14336
+$ crc config set cpus 4
 $ crc config set consent-telemetry no
 $ crc config set disk-size 100
 $ crc config set enable-cluster-monitoring true
