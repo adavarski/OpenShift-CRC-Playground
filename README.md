@@ -456,19 +456,41 @@ TBD: Pipeline triggered by GitHub push event (webhook), Note: Needs OC public IP
 OpenShift GitOps is based on Argo CD. To install OpenShift GitOps using the OpenShift Console, visit the OperatorHub
 section in the OpenShift console, search for OpenShift GitOps and click Install.
 ```
-$ oc extract secret/openshift-gitops-cluster -n openshift-gitops --to=-
-# admin.password
-6eJ9jmwT4vcFDZABPgYWNCk73sEutyqd
+$ oc get operators
+NAME                                                  AGE
+openshift-gitops-operator.openshift-gitops-operator   9m29s
 
 $ oc project openshift-gitops
 Now using project "openshift-gitops" on server "https://console-openshift-console.apps-crc.testing:6443".
-$ oc get route
-NAME                      HOST/PORT                                                   PATH   SERVICES                  PORT    TERMINATION            WILDCARD
-kam                       kam-openshift-gitops.apps-crc.testing                              kam                       8443    passthrough/None       None
-openshift-gitops-server   openshift-gitops-server-openshift-gitops.apps-crc.testing          openshift-gitops-server   https   passthrough/Redirect   None
+
+$ oc get pods -n openshift-gitops
+NAME                                                          READY   STATUS    RESTARTS   AGE
+cluster-6b66cd5687-kz64r                                      1/1     Running   0          6m3s
+kam-868f97bd49-xv794                                          1/1     Running   0          6m3s
+openshift-gitops-application-controller-0                     0/1     Pending   0          59s
+openshift-gitops-applicationset-controller-7d9dcdf769-d4d7d   0/1     Pending   0          5m57s
+openshift-gitops-dex-server-59f95c5d64-vhg94                  1/1     Running   0          6m2s
+openshift-gitops-dex-server-6cb895889d-jpbqs                  0/1     Pending   0          5m57s
+openshift-gitops-redis-5684c6fc5b-md868                       1/1     Running   0          5m58s
+openshift-gitops-repo-server-dcf86f4c7-d6jfj                  1/1     Running   0          5m58s
+openshift-gitops-server-55dbf6b78b-wnpv6                      1/1     Running   0          5m58s
+
+$ argoPass=$(oc get secret/openshift-gitops-cluster -n openshift-gitops -o jsonpath='{.data.admin\.password}' | base64 -d)
+echo $argoPass
+2AxpLMcK1owVYBgejEdys06GrT7lRatO
+$ argoURL=$(oc get route openshift-gitops-server -n openshift-gitops -o jsonpath='{.spec.host}{"\n"}')
+echo $argoURL
+openshift-gitops-server-openshift-gitops.apps-crc.testing
+
+Note: Add to /etc/hosts
+$ cat /etc/hosts|grep gitops
+192.168.1.99 devops console-openshift-console.apps-crc.testing oauth-openshift.apps-crc.testing arcade.apps-crc.testing openshift-gitops-server-openshift-gitops.apps-crc.testing
+
+Give the ServiceAccount for ArgoCD the ability to manage the cluster:
+$ oc adm policy add-cluster-role-to-user cluster-admin -z openshift-gitops-argocd-application-controller -n openshift-gitops
 ```
 
-Add "192.168.1.99 openshift-gitops-server-openshift-gitops.apps-crc.testing" to /etc/hosts and Browser Access ArgoCD Web UI: https://openshift-gitops-server-openshift-gitops.apps-crc.testing/applications (user: admin; password: 6eJ9jmwT4vcFDZABPgYWNCk73sEutyqd)
+Access ArgoCD Web UI: https://openshift-gitops-server-openshift-gitops.apps-crc.testing/applications (user: admin; password: 6eJ9jmwT4vcFDZABPgYWNCk73sEutyqd)
 
 Download arcocd CLI and login
 ```
@@ -477,6 +499,10 @@ $ sudo chmod 755 /usr/local/bin/argocd
 $ argocd login --insecure openshift-gitops-server-openshift-gitops.apps-crc.testing --grpc-web
 Username: admin
 Password: 
+'admin:login' logged in successfully
+Context 'openshift-gitops-server-openshift-gitops.apps-crc.testing' updated
+
+$ argocd login --insecure --grpc-web $argoURL  --username admin --password $argoPass
 'admin:login' logged in successfully
 Context 'openshift-gitops-server-openshift-gitops.apps-crc.testing' updated
 
